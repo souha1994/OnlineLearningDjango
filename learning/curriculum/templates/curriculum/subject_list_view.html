@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+
+{% for subject in standards.subjects.all %}
+        <a href="{% url 'curriculum:lesson_list' slug=subject.slug standard=standards.slug %}">{{subject.name}}</a><br>
+        {{subject.description|truncatechars:75}}
+
+{% endfor %}        
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<br>
+<br>
+<br>
+
+<form method="post">
+    {% csrf_token %}
+    {{form|crispy}}
+    <input type="submit" name="" value="update">
+    <a href="{% url 'curriculum:lesson_detail' standard=lessons.Standard.slug subject=lessons.subject.slug slug=lessons.slug %}" class="btn btn-danger btn-block">Cancel Update</a>
+
+</form>
+
+{% endblock %}
